@@ -57,6 +57,8 @@ then
   fi
 fi
 
+export RCUTILS_COLORIZED_OUTPUT=1
+
 @[if ros_domain_id]@
 export ROS_DOMAIN_ID=@(ros_domain_id)
 @[end if]@
