@@ -72,6 +72,8 @@ def get_argument_parser():
                    help="Specify provider if the autodetect fails to identify the correct provider")
     p.add_argument("--symlink", action='store_true',
                    help="Create symbolic link to job launch files instead of copying them.")
+    p.add_argument("--robot_name", type=str, metavar="ROBOT_NAME",
+                   help="Set robot name variable")
     p.add_argument("--wait", action='store_true',
                    help="Pass a wait flag to roslaunch.")
     p.add_argument("--systemd-after", type=str, metavar="After=",
@@ -95,7 +97,7 @@ def main():
         name=job_name, rmw=args.rmw, rmw_config=args.rmw_config,
         interface=args.interface, ros_domain_id=args.ros_domain_id,
         user=args.user, workspace_setup=args.setup, rosdistro=args.rosdistro, log_path=args.logdir,
-        systemd_after=args.systemd_after)
+        systemd_after=args.systemd_after, robot_name=args.robot_name)
 
     for this_pkgpath in args.pkgpath:
         pkg, pkgpath = this_pkgpath.split('/', 1)
