@@ -35,6 +35,8 @@ After=@(systemd_after)
 Type=simple
 ExecStart=/usr/sbin/@(name)-start
 TimeoutStopSec=10
+Restart=on-failure
+RestartSec=20s
 
 [Install]
 WantedBy=multi-user.target
