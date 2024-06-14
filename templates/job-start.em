@@ -134,6 +134,8 @@ if [ "$?" != "0" ]; then
 fi
 
 # Punch it.
+export ROBOT_NAME=@(robot_name)
+export HOME=$(echo ~@(user))/
 setpriv --reuid @(user) --regid @(user) --init-groups ros2 launch $LAUNCH_FILENAME @(roslaunch_wait?'--wait ')&
 PID=$!
 
