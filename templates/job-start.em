@@ -88,11 +88,7 @@ if [ "$ROS_IP" = "" ]; then
   log err "@(name): No IP address on @(interface), cannot ros2 launch."
   exit 1
 fi
-if ! (ping -q -c1 -i5 www.google.com &> /dev/null)
-then 
-  echo "Unable to ping internet. Cannot launch"
-  exit 1;
-fi
+
 @[else]@
 export ROS_HOSTNAME=$(hostname)
 @[end if]@

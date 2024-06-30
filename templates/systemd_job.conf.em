@@ -36,7 +36,7 @@ Type=simple
 ExecStart=/usr/sbin/@(name)-start
 TimeoutStopSec=10
 Restart=on-failure
-RestartSec=20s
+RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target
